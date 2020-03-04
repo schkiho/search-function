@@ -19,7 +19,10 @@ async function searchBusiness(name, street, zip, country) {
 
   fetch(url, options)
     .then(res => res.json())
-    .then(res => console.log(res.response.searchData));
+    .then(res => console.log(res.response.searchData))
+    .catch(error => {
+      console.log(error);
+    });
 }
 
 console.log(searchBusiness('Saturn', 'Elsenstr. 111 - 114', ' 12435', 'DE'));
